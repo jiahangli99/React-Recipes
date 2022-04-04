@@ -1,9 +1,13 @@
 import React from 'react';
+import './Nav.css'
 
 function Nav(props) {
     return (
-        <div>
-            <h1>Nav</h1>
+        <div className='nav'>
+            <li className='navButton'>Home</li>
+            <li className='navButton'>Add New Recipe</li>
+            <li className='navButton'>About</li>
+            <li className='navButton'>Contact</li>
         </div>
     );
 }
