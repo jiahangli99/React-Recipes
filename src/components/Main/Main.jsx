@@ -9,13 +9,17 @@ function Main(props) {
     const getRecipes = async () => {
         const response = await fetch(URL)
         const data = await response.json()
+        console.log(data)
         setRecipes(data)
     }
+
+    useEffect(() => getRecipes(), [])
+
     return (
         <div className='main'>
             <Switch>
                 <Route exact path='/'>
-                    <AllRecipes />
+                    <AllRecipes recipes={recipes}/>
                 </Route>
             </Switch>
         </div>
