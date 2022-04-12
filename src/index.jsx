@@ -5,11 +5,12 @@ import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.createRoot(document.querySelector("#root")).render(
-  <React.StrictMode>
     <Router>
+  <React.StrictMode>
     <App />
-    </Router>
   </React.StrictMode>,
+    </Router>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

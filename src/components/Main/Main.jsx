@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import './Main.css'
 import AllRecipes from '../../pages/AllRecipes'
+import Recipe from '../../pages/Recipe.jsx'
 import { Switch, Route} from 'react-router-dom';
 
 function Main(props) {
@@ -17,14 +18,25 @@ function Main(props) {
         getRecipes()
       }, [])
 
+    
     return (
         <div className='main'>
             <Switch>
                 <Route exact path='/'>
                     <AllRecipes recipes={recipes}/>
                 </Route>
+				<Route
+					exact path='/:id'
+					render={(rp) => (
+						<Recipe
+                            recipes = {recipes}
+							{...rp}
+						/>
+					)}
+				/>
             </Switch>
         </div>
+
     );
 }
 
