@@ -4,8 +4,13 @@ import AllRecipes from '../../pages/AllRecipes'
 import { Switch, Route} from 'react-router-dom';
 
 function Main(props) {
-    const [notes, setNotes] = useState([])
+    const [recipes, setRecipes] = useState([])
     const URL = 'https://recipesjson.herokuapp.com/recipes'
+    const getRecipes = async () => {
+        const response = await fetch(URL)
+        const data = await response.json()
+        setRecipes(data)
+    }
     return (
         <div className='main'>
             <Switch>
