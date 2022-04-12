@@ -6,14 +6,16 @@ import { Switch, Route} from 'react-router-dom';
 function Main(props) {
     const [recipes, setRecipes] = useState([])
     const URL = 'https://recipesjson.herokuapp.com/recipes'
-    const getRecipes = async () => {
+
+    useEffect(() => {
+        async function getRecipes() {
         const response = await fetch(URL)
         const data = await response.json()
-        console.log(data)
         setRecipes(data)
-    }
-
-    useEffect(() => getRecipes(), [])
+        }
+    
+        getRecipes()
+      }, [])
 
     return (
         <div className='main'>
