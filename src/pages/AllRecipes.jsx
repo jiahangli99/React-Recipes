@@ -1,6 +1,7 @@
 import React from 'react';
 
 function AllRecipes(props) {
+    if(props.recipes){
     return (
         <div>
             {props.recipes.map((recipe, i) => (
@@ -9,7 +10,13 @@ function AllRecipes(props) {
                 </div>
             ))}
         </div>
-    );
+    )} else {
+        return(
+            <div>
+                <h1>Loading</h1>
+            </div>
+        )
+    }
 }
 
 export default AllRecipes;
