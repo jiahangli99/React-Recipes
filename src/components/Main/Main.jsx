@@ -5,7 +5,7 @@ import { Switch, Route} from 'react-router-dom';
 
 function Main(props) {
     const [notes, setNotes] = useState([])
-    
+    const URL = 'https://recipesjson.herokuapp.com/recipes'
     return (
         <div className='main'>
             <Switch>
